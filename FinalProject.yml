@@ -1,0 +1,9 @@
+name: FinalProject
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - networkx
+  - folium
+  - pandas
+prefix: C:\Users\altyn\miniconda3\envs\FinalProject
