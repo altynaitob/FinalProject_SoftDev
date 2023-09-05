@@ -4,7 +4,15 @@ This is repository for final project of Software Development course.
 Goal: To create routes from a user-defined point "A" to a point "B" available in a CSV file using the networkx package and visualize it with folium.
 
 Approach: 
-1. Create the CSV file with sport facilities data, or the destination points, and their coordinates.
-2. Prompt the user to input point "A".
-3. Use networkx to find the shortest path from "A" to "B."
-4. Visualize the route on a map using folium.
+1. We begin by importing necessary libraries, including folium, networkx, and pandas.
+2. Create the CSV file with sport facilities data, or the destination points, and their coordinates. We read a CSV file named 'Sport_facilities.csv' using pd.read_csv to obtain information about destination points. The CSV contains columns like 'Point', 'Latitude', 'Longitude' about each destination point.
+3. Building the Graph (Network): We create a graph G using networkx to represent the network of points. For each row in the CSV, we add a node to the graph, representing a destination point, and associate its position (latitude and longitude) with it. We can also add edges connecting adjacent points if needed.
+4. We define the main function where the core logic will reside.
+5. We prompt the user to input point "A" (the starting point) and convert it to uppercase for consistency.
+6. We check if the entered point "A" exists in our graph. If not, we inform the user and exit.
+7. We display the available destination points (from the CSV) to help the user select point "B". The user inputs point "B," and we convert it to uppercase.
+8. We check if the entered point "B" exists in our graph. If not, we inform the user and exit.
+9. We use networkx to find the shortest path and its distance from point "A" to point "B" using Dijkstra's algorithm. The results are stored in shortest_path and shortest_distance variables.
+10. We print the shortest path and distance to the console so the user can see the results.
+11. Visualize the route on a map using folium. We create a folium map centered at point "A" (the starting point). We iterate over the points in the shortest_path and add markers for each of them on the map. We also draw blue lines to connect the markers, creating a visual representation of the route.
+12. We save the folium map to an HTML file named 'route_visualization.html' for visualization.
