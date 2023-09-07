@@ -12,4 +12,3 @@ Approach:
 9. We use networkx to find the shortest path and its distance from point "A" to point "B" using Dijkstra's algorithm. The results are stored in shortest_path and shortest_distance variables.
 10. We print the shortest path and distance to the console so the user can see the results.
 11. Visualize the route on a map using folium. We create a folium map centered at point "A" (the starting point). We iterate over the points in the shortest_path and add markers for each of them on the map. We also draw blue lines to connect the markers, creating a visual representation of the route.
-12. We save the folium map to an HTML file named 'route_visualization.html' for visualization.
